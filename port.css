@@ -1,0 +1,358 @@
+/* CSS Reset and Basic Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =================================
+CSS Variables for Theming
+=================================
+*/
+:root {
+    --background-color: #121212;
+    --text-color: #f0f0f0;
+    --primary-color: #ff6347; /* Coral */
+    --secondary-color: #00e6e6; /* Soft Cyan */
+    --card-bg-color: #1f1f1f;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* =================================
+General Body and GUI Styles
+=================================
+*/
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* =================================
+Header and Navigation
+=================================
+*/
+header {
+    background: var(--background-color);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* =================================
+Hero Section
+=================================
+*/
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.hero-left h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-left h1 span {
+    color: var(--primary-color);
+}
+
+.role {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.btn-secondary {
+    color: var(--primary-color);
+    background: none;
+    border-color: var(--primary-color);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-bg-color);
+}
+
+.tech-stack p {
+    font-weight: 600;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* =================================
+About Section
+=================================
+*/
+.about {
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+}
+
+.about-services {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.service-item {
+    background: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.service-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.service-item h4 {
+    font-size: 1.2rem;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 2rem;
+}
+
+.about-stats {
+    display: flex;
+    gap: 3rem;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* =================================
+Projects Section
+=================================
+*/
+.projects {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg-color);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* =================================
+Footer & Contact Section
+=================================
+*/
+footer {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: scale(1.3);
+}
+
+/* =================================
+Responsive Design
+=================================
+*/
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-left h1 {
+        font-size: 3rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .tech-stack {
+        display: none;
+    }
+}
